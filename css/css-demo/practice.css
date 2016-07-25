@@ -13,5 +13,8 @@
 }
 h2::first-letter {
 	font-weight: bold;
-	color: blue;
+	font-size: 150%;
+}
+ol li {
+	color: pink;
 }
