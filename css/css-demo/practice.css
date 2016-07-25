@@ -11,3 +11,7 @@
 .unordered {
 	font-size: .8em;
 }
+h2::first-letter {
+	font-weight: bold;
+	color: blue;
+}
