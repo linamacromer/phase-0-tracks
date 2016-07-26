@@ -9,10 +9,21 @@ cite {
   margin-top: 10px;
 }
 
+#external-links {
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+  position:absolute;
+  right: 0px;
+
+}
+
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+
 }
+
 
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
@@ -29,4 +40,13 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+body {
+  width: 960px;
+  position: relative;
+}
+main {
+  width: 756px;
+  display: inline-block;
+  vertical-align: top;
 }
