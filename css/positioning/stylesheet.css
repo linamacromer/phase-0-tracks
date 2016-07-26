@@ -4,3 +4,8 @@
 	top: 80px;
 	z-index: -1;
 }
+#hat {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
