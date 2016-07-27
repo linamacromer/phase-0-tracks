@@ -62,3 +62,15 @@ main {
     color: blue;
   }
 }
+
+@media screen and (max-width: 500px) {
+    a.long-link {
+      display: none;
+    }
+  }
+
+@media screen and (min-width: 501px) {
+    a.short-link {
+      display: none;
+    }
+  }
