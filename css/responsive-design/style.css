@@ -10,18 +10,15 @@ cite {
 }
 
 #external-links {
-  width: 200px;
+  max-width: 20%;
   display: inline-block;
   vertical-align: top;
-  position:absolute;
-  right: 0px;
-
+  position:relative;
 }
 
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
-
 }
 
 
@@ -42,11 +39,13 @@ figcaption {
   text-align: right;
 }
 body {
-  width: 960px;
-  position: relative;
+  max-width: 960px;
 }
 main {
-  width: 756px;
+  max-width: 756px;
   display: inline-block;
   vertical-align: top;
+  position: relative;
+  top: 0px;
+  left:  0px;
 }
