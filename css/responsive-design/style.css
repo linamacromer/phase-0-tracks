@@ -49,3 +49,16 @@ main {
   top: 0px;
   left:  0px;
 }
+/*
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+} */
+
+@media screen and (max-width: 500px) {
+  main h1 {
+    font-size: 25px;
+    color: blue;
+  }
+}
