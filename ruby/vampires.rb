@@ -19,7 +19,7 @@ if name == "Drake Cula"
 		vampire_name = true
 	else vampire_name = false
 end
-
+p vampire_name
 #Check if age is wrong, vampire_age is true
 if birthdayhappened == "Yes" && (currentyear - birthyear == age)
 		vampire_age = false
@@ -27,27 +27,35 @@ if birthdayhappened == "Yes" && (currentyear - birthyear == age)
 		vampire_age = false
 	else vampire_age = true
 end
-
+p vampire_age
 #Check if garlic answer was no, vampire_garlic is true
 if garlic == "No"
 	vampire_garlic = true
 	else vampire_garlic = false
 end
-
+p vampire_garlic
 #Check if health insurance answer was no, vampire_health is true
 if health == "No"
-	vamppire_health = true
+	vampire_health = true
 	else vampire_health = false
 end
-
+p vampire_health
 #If age=false AND (garlic OR health)=false, "probably not a vampire"
-
 #If age=true AND (garlic OR health =true), "probably a vampire"
-
 #If age=true AND garlic=true AND health=true, "almost certainly a vampire"
-
 #If age=false, garlic=false, health=false, name=true, "Definitely a vampire"
-
 #Else "Results inconclusive"
-
 #print results
+if 
+	(vampire_age == false) && (vampire_garlic == false) && (vampire_health == false) && (vampire_name == true)
+		vampire = "Definitely a vampire."
+	elsif (vampire_age == false) && (vampire_garlic == false || vampire_health == false)
+		vampire = "Probably not a vampire."
+	elsif (vampire_age == true) && (vampire_garlic == true) && (vampire_health == true)
+		vampire = "Almost certainly a vampire."
+	elsif (vampire_age == true) && (vampire_garlic == true || vampire_health == true)
+		vampire = "Probably a vampire."
+	else
+		vampire = "Results inconclusive"
+end
+puts vampire
