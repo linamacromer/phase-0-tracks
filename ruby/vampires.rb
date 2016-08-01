@@ -29,8 +29,16 @@ if birthdayhappened == "Yes" && (currentyear - birthyear == age)
 end
 
 #Check if garlic answer was no, vampire_garlic is true
+if garlic == "No"
+	vampire_garlic = true
+	else vampire_garlic = false
+end
 
 #Check if health insurance answer was no, vampire_health is true
+if health == "No"
+	vamppire_health = true
+	else vampire_health = false
+end
 
 #If age=false AND (garlic OR health)=false, "probably not a vampire"
 
