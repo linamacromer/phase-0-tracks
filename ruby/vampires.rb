@@ -4,6 +4,9 @@ puts "How old are you?"
 age = gets.chomp.to_i
 puts "What year were you born?"
 birthyear = gets.chomp.to_i
+currentyear = 2016
+puts "Have you had your birthday yet this year? Type Yes or No"
+birthdayhappened = gets.chomp
 puts "Our company cafeteria serves garlic bread. Should we order some for you? Type Yes or No"
 garlic = gets.chomp
 puts "Would you like to enroll in the company's health insurance? Type Yes or No"
@@ -18,6 +21,12 @@ if name == "Drake Cula"
 end
 
 #Check if age is wrong, vampire_age is true
+if birthdayhappened == "Yes" && (currentyear - birthyear == age)
+		vampire_age = false
+	elsif birthdayhappened == "No" && (currentyear - birthyear - 1 == age)
+		vampire_age = false
+	else vampire_age = true
+end
 
 #Check if garlic answer was no, vampire_garlic is true
 
