@@ -1,0 +1,24 @@
+ELEVATOR ROBOT:
+-When 0 humans are present in the elevator, do nothing
+
+-When at least 1 human is present in the elevator:
+	-Until each human has input a number command
+		-Ask for a number command
+		-Press the corresponding number on the pad
+		-Move to the next human that has not input a command
+
+
+FLOSSING:
+-Check if I am holding floss:
+	-If yes, do nothing
+	-If no, get some floss
+-Until all teeth have been flossed:
+	-Set position at tooth.
+	-Floss tooth.
+	-Move position to next tooth.
+
+	-If no more teeth need to be flossed:
+		-End flossing
+		-Throw away floss
+		-Wash hands
+		-End flossing command.
