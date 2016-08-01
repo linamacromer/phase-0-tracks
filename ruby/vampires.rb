@@ -10,6 +10,12 @@ puts "Would you like to enroll in the company's health insurance? Type Yes or No
 health = gets.chomp
 
 #Check if name is Drake Cula or Tu Fang, vampire_name is true
+if name == "Drake Cula"
+		vampire_name = true
+	elsif name == "Tu Fang"
+		vampire_name = true
+	else vampire_name = false
+end
 
 #Check if age is wrong, vampire_age is true
 
