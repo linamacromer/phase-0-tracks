@@ -78,5 +78,6 @@ until employee > total_employees do
 	employee +=1
 	else puts "Probably a vampire."
 	employee +=1
+	end
 end
-end
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
