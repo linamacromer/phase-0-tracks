@@ -7,43 +7,50 @@ until employee > total_employees do
 
 	#Asks employee questions
 	puts "What is your name?"
-	name = gets.chomp
+	name = gets.chomp.downcase
 	puts "How old are you?"
 	age = gets.chomp.to_i
 	puts "What year were you born?"
 	birthyear = gets.chomp.to_i
 	currentyear = 2016
 	puts "Have you had your birthday yet this year? Type Yes or No"
-	birthdayhappened = gets.chomp
+	birthdayhappened = gets.chomp.downcase
 	puts "Our company cafeteria serves garlic bread. Should we order some for you? Type Yes or No"
-	garlic = gets.chomp
+	garlic = gets.chomp.downcase
 	puts "Would you like to enroll in the company's health insurance? Type Yes or No"
-	health = gets.chomp
+	health = gets.chomp.downcase
+
+	#Check for suspicious allergies in loop
+	allergy = nil
+	until allergy == "sunshine" || allergy == "done"
+		puts "Name any allergies you have, one at a time."
+		allergy = gets.chomp.downcase
+	end
 
 	#Check if name is Drake Cula or Tu Fang, vampire_name is true
-	if name == "Drake Cula"
+	if name == "drake cula"
 			vampire_name = true
-		elsif name == "Tu Fang"
+		elsif name == "tu fang"
 			vampire_name = true
 		else vampire_name = false
 	end
 
 	#Check if age is wrong, vampire_age is true
-	if birthdayhappened == "Yes" && (currentyear - birthyear == age)
+	if birthdayhappened == "yes" && (currentyear - birthyear == age)
 			vampire_age = false
-		elsif birthdayhappened == "No" && (currentyear - birthyear - 1 == age)
+		elsif birthdayhappened == "no" && (currentyear - birthyear - 1 == age)
 			vampire_age = false
 		else vampire_age = true
 	end
 
 	#Check if garlic answer was no, vampire_garlic is true
-	if garlic == "No"
+	if garlic == "no"
 		vampire_garlic = true
 		else vampire_garlic = false
 	end
 
 	#Check if health insurance answer was no, vampire_health is true
-	if health == "No"
+	if health == "no"
 		vampire_health = true
 		else vampire_health = false
 	end
