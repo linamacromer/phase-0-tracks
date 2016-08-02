@@ -1,3 +1,32 @@
+.column-1 {
+  background-color: blue;
+  display: inline-block;
+  width: 300px;
+  height: 1200px;
+  vertical-align: top;
+}
+
+.column-2 {
+  background-color: green;
+  display: inline-block;
+  width: 300px;
+  height: 1200px;
+  vertical-align: top;
+}
+
+header {
+  background-image: url("http://image.shutterstock.com/z/stock-vector-seamless-pattern-with-electronics-blue-icons-of-computer-technology-on-a-white-background-185465054.jpg")
+}
+
+h1 {
+  font-family: "Avant Garde", AvantGarde, Sans-serif;
+  color: purple;
+}
+
+header p {
+  font-family: "Arial Narrow", Arial, Sans-serif;
+}
+
 html {
-	background-color: blue;
+  font-family: "Arial Narrow", Arial, Sans-serif;
 }
