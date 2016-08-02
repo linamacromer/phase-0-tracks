@@ -21,58 +21,62 @@ until employee > total_employees do
 	health = gets.chomp.downcase
 
 	#Check for suspicious allergies in loop
-	allergy = nil
+	puts "Name any allergies you have, one at a time."
+	allergy = gets.chomp.downcase
 	until allergy == "sunshine" || allergy == "done"
-		puts "Name any allergies you have, one at a time."
+		puts "Do you have any other allergies? List them one at a time."
 		allergy = gets.chomp.downcase
 	end
+	if allergy != "sunshine"
+		#Check if name is Drake Cula or Tu Fang, vampire_name is true
+		if name == "drake cula"
+				vampire_name = true
+			elsif name == "tu fang"
+				vampire_name = true
+			else vampire_name = false
+		end
 
-	#Check if name is Drake Cula or Tu Fang, vampire_name is true
-	if name == "drake cula"
-			vampire_name = true
-		elsif name == "tu fang"
-			vampire_name = true
-		else vampire_name = false
-	end
+		#Check if age is wrong, vampire_age is true
+		if birthdayhappened == "yes" && (currentyear - birthyear == age)
+				vampire_age = false
+			elsif birthdayhappened == "no" && (currentyear - birthyear - 1 == age)
+				vampire_age = false
+			else vampire_age = true
+		end
 
-	#Check if age is wrong, vampire_age is true
-	if birthdayhappened == "yes" && (currentyear - birthyear == age)
-			vampire_age = false
-		elsif birthdayhappened == "no" && (currentyear - birthyear - 1 == age)
-			vampire_age = false
-		else vampire_age = true
-	end
+		#Check if garlic answer was no, vampire_garlic is true
+		if garlic == "no"
+			vampire_garlic = true
+			else vampire_garlic = false
+		end
 
-	#Check if garlic answer was no, vampire_garlic is true
-	if garlic == "no"
-		vampire_garlic = true
-		else vampire_garlic = false
-	end
+		#Check if health insurance answer was no, vampire_health is true
+		if health == "no"
+			vampire_health = true
+			else vampire_health = false
+		end
 
-	#Check if health insurance answer was no, vampire_health is true
-	if health == "no"
-		vampire_health = true
-		else vampire_health = false
-	end
-
-	#If age=false AND (garlic OR health)=false, "probably not a vampire"
-	#If age=true AND (garlic OR health =true), "probably a vampire"
-	#If age=true AND garlic=true AND health=true, "almost certainly a vampire"
-	#If age=false, garlic=false, health=false, name=true, "Definitely a vampire"
-	#Else "Results inconclusive"
-	#print results
-	if 
-		(vampire_age == false) && (vampire_garlic == false) && (vampire_health == false) && (vampire_name == true)
-			vampire = "Definitely a vampire."
-		elsif (vampire_age == false) && (vampire_garlic == false || vampire_health == false)
-			vampire = "Probably not a vampire."
-		elsif (vampire_age == true) && (vampire_garlic == true) && (vampire_health == true)
-			vampire = "Almost certainly a vampire."
-		elsif (vampire_age == true) && (vampire_garlic == true || vampire_health == true)
-			vampire = "Probably a vampire."
-		else
-			vampire = "Results inconclusive"
-	end
-	puts vampire
+		#If age=false AND (garlic OR health)=false, "probably not a vampire"
+		#If age=true AND (garlic OR health =true), "probably a vampire"
+		#If age=true AND garlic=true AND health=true, "almost certainly a vampire"
+		#If age=false, garlic=false, health=false, name=true, "Definitely a vampire"
+		#Else "Results inconclusive"
+		#print results
+		if 
+			(vampire_age == false) && (vampire_garlic == false) && (vampire_health == false) && (vampire_name == true)
+				vampire = "Definitely a vampire."
+			elsif (vampire_age == false) && (vampire_garlic == false || vampire_health == false)
+				vampire = "Probably not a vampire."
+			elsif (vampire_age == true) && (vampire_garlic == true) && (vampire_health == true)
+				vampire = "Almost certainly a vampire."
+			elsif (vampire_age == true) && (vampire_garlic == true || vampire_health == true)
+				vampire = "Probably a vampire."
+			else
+				vampire = "Results inconclusive"
+		end
+		puts vampire
 	employee +=1
+	else puts "Probably a vampire."
+	employee +=1
+end
 end
