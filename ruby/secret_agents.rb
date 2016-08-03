@@ -21,3 +21,16 @@ def encrypt(string)
 	return string
 end
 p encrypt("abc")
+
+def decrypt(string)
+	alpha = "abcdefghijklmnopqrstuvwxyz"
+	counter = 0
+	while counter < string.length 
+		char = string[counter]
+		num = alpha.index(char)
+		string[counter] = alpha[num - 1]
+		counter +=1
+	end
+	return string
+end	
+p decrypt("bcd")
