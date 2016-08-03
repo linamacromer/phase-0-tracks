@@ -11,3 +11,13 @@
 #walk through string
 	#look at each letter, determine what number of index it is
 	#change it to the previous index number character
+
+def encrypt(string)
+	counter = 0
+	while counter < string.length
+		string[counter] = string[counter].next
+		counter += 1
+	end
+	return string
+end
+p encrypt("abc")
