@@ -43,10 +43,30 @@ def decrypt(string)
 	return string
 end	
 
-p encrypt("abc")
-p encrypt("zed")
-p decrypt("bcd")
-p decrypt("afe")
+#p encrypt("abc")
+#p encrypt("zed")
+#p decrypt("bcd")
+#p decrypt("afe")
 
 #When calling nested methods, it runs the innermost method first, then works its way outer. In this case it encrypted "swordfish" and then decrypted it.
-p decrypt(encrypt("swordfish")) 
+#p decrypt(encrypt("swordfish")) 
+
+# OUR DRIVER CODE
+
+#Asks the secret agent whether they would like to decrypt or encrypt a password
+puts "Would you like to decrypt or encrypt a password?"
+request = gets.chomp.downcase
+
+#Asks them for the password
+puts "What is the password?"
+password = gets.chomp.downcase
+
+#Conducts the operation, prints result, exits
+if request == "encrypt"
+	result = encrypt(password)
+elsif request == "decrypt"
+	result = decrypt(password)
+else 
+	result = "Try again."
+end
+puts "\nThe result is #{result}."
