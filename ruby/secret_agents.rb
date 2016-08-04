@@ -17,8 +17,7 @@ def encrypt(string)
 	while counter < string.length
 		if string[counter] == "z"
 			string[counter] = "a"
-		elsif 
-			string[counter] == " "
+		elsif string[counter] == " "
 		else 
 			string[counter] = string[counter].next
 		end
@@ -26,7 +25,6 @@ def encrypt(string)
 	end
 	return string
 end
-p encrypt("abc")
 
 def decrypt(string)
 	alpha = "abcdefghijklmnopqrstuvwxyz"
@@ -34,10 +32,18 @@ def decrypt(string)
 	while counter < string.length 
 		char = string[counter]
 		num = alpha.index(char)
-		string[counter] = alpha[num - 1]
-		counter +=1
+		if char == "a"
+			string[counter] = "z"
+		elsif char == " "
+		else 
+			string[counter] = alpha[num - 1]
+		end
+		counter += 1
 	end
 	return string
 end	
-p decrypt("bcd")
+
+p encrypt("abc")
 p encrypt("zed")
+p decrypt("bcd")
+p decrypt("afe")
