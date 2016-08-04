@@ -15,7 +15,13 @@
 def encrypt(string)
 	counter = 0
 	while counter < string.length
-		string[counter] = string[counter].next
+		if string[counter] == "z"
+			string[counter] = "a"
+		elsif 
+			string[counter] == " "
+		else 
+			string[counter] = string[counter].next
+		end
 		counter += 1
 	end
 	return string
@@ -34,3 +40,4 @@ def decrypt(string)
 	return string
 end	
 p decrypt("bcd")
+p encrypt("zed")
