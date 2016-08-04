@@ -47,3 +47,6 @@ p encrypt("abc")
 p encrypt("zed")
 p decrypt("bcd")
 p decrypt("afe")
+
+#When calling nested methods, it runs the innermost method first, then works its way outer. In this case it encrypted "swordfish" and then decrypted it.
+p decrypt(encrypt("swordfish")) 
