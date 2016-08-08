@@ -19,21 +19,23 @@ p "Stop! You’re under arrest!".upcase
 p "the usual".insert(-1," suspects")
 #=> "the usual suspects"
 
-# " suspects".<???>
+p " suspects".insert(0,"the usual")
+#or
+p " suspects".prepend("the usual")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+p "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+p "The mystery of the missing first letter".reverse.chop.reverse
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+p "Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
+p "z".getbyte(0)
 # => 122 
-# (What is the significance of the number 122 in relation to the character z?)
+# (What is the significance of the number 122 in relation to the character z?) I honestly stumbled on this correct answer. I saw this one, and skipped over it because it seemed like it needed more research. I was looking through all the string methods in the docs, trying to figure out how to do the next one, when i saw the getbyte method, and the example seemed weird enough that I thought to try it in hopes that z might return 122, which it did... More research needs to be done for this, but for now, I have the answer!
 
-# "How many times does the letter 'a' appear in this string?".<???>
+p "How many times does the letter 'a' appear in this string?".count("a")
 # => 4
