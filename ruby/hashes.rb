@@ -9,6 +9,7 @@
 client = {}
 
 #User Interface
+	#type out all information
 print "Hello, please input client information.\nName: "
 client[:name] = gets.chomp
 print "Age: "
@@ -21,3 +22,17 @@ print "Hometown: "
 client[:hometown] = gets.chomp
 print "Do you have any pets? (Y/N): "
 client[:pets] = gets.chomp
+
+	#print hash to review and ask for correction
+puts "\nThank you for the information. Please review it below and make sure it is all correct.\n\nName: #{client[:name]} \nAge: #{client[:age]} \nNumber of Children: #{client[:children]} \nFavorite Color: #{client[:color]} \nHometown: #{client[:hometown]} \nPets?: #{client[:pets]}\n\nDoes this all look correct? If there are any mistakes, type the label name and hit enter, and you will be prompted for a correction. If there are no mistakes, type 'none' to submit the form."
+correction = gets.chomp.downcase
+
+	#if correction is none, skip to the end. If correction is not none, get input
+if correction == "none"
+	puts "none"
+	else
+	puts "Please enter the corrected data."
+	correct_data = gets.chomp
+	client[correction.to_sym] = correct_data
+	p client
+end
