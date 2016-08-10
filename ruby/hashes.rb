@@ -29,10 +29,12 @@ correction = gets.chomp.downcase
 
 	#if correction is none, skip to the end. If correction is not none, get input
 if correction == "none"
-	puts "none"
+	puts "No corrections to make."
 	else
 	puts "Please enter the corrected data."
 	correct_data = gets.chomp
 	client[correction.to_sym] = correct_data
-	p client
 end
+
+	#print final hash to view
+puts "\nThank you for the information. See below for your client information.\n\nName: #{client[:name]} \nAge: #{client[:age]} \nNumber of Children: #{client[:children]} \nFavorite Color: #{client[:color]} \nHometown: #{client[:hometown]} \nPets?: #{client[:pets]}\n\nThanks, and have a good day."
