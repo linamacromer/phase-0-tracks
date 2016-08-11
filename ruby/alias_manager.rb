@@ -11,4 +11,12 @@ new_name = ""
 def first_last_swap(old,new)
 	new = old.split(" ").reverse!.join(" ")
 end
-p first_last_swap(real_name,new_name)
+new_name = first_last_swap(real_name,new_name)
+p new_name
+#Split the name into all characters. Loop for all letters, if it is a vowel, find the index and increase by one. 
+
+def vowels (name)
+	name.chars
+end
+
+p vowels(new_name)
