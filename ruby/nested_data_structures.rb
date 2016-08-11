@@ -98,5 +98,20 @@ house = {
 	}
 }
 
-# This should print out how many light switches are on in the kitchen.
+# This should print out how many light switches are on in the kitchen, should return "2".
 p house[:kitchen][:lights][:current_switches_on]
+
+# This should print out the decorations in the garage, should be none.
+p house[:garage][:decoration]
+
+# This should print out the 3rd piece of furniture in the living room, should be "coffee table".
+p house[:living_room][:furniture][2]
+
+# This should print out the wall color in the bathroom, should be "blue".
+p house [:bedroom][:wall_color]
+
+# This should print out the wall color in the bathroom, and make it all capital letters, should be "GREEN".
+p house [:bathroom][:wall_color].upcase
+
+# This should return the list of furniture in the closet, but in reverse order, should be "linens", "laundry hamper", "dryer", "washer".
+p house [:closet][:furniture].reverse
