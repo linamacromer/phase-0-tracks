@@ -46,15 +46,17 @@ new_name = new_array.join("").split(" ").map! {|word| word.capitalize}.join(" ")
 
 puts "Hello, type in a name!"
 original_name = gets.chomp.downcase
+	until original_name == "quit"
+		new_name = first_last_swap(original_name,new_name)
+		name_array = letter_array(new_name)
 
-new_name = first_last_swap(original_name,new_name)
-name_array = letter_array(new_name)
+		new_array = []
+		name_array.each do |x|
+			new_array.push(letter_change(x))
+		end
 
-new_array = []
-name_array.each do |x|
-	new_array.push(letter_change(x))
-end
+		new_name = new_array.join("").split(" ").map! {|word| word.capitalize}.join(" ")
 
-new_name = new_array.join("").split(" ").map! {|word| word.capitalize}.join(" ")
-
-puts "The new name is #{new_name}."
+		puts "\nThe new name is #{new_name}. \n\nWould you like to translate another name? \nPlease type the next name, or type 'quit' if you are finished."
+		original_name = gets.chomp.downcase
+	end
