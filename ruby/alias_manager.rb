@@ -3,16 +3,14 @@
 #Change aeiou to next aeiou
 #Change consonants to next consonant
 
-first = "Felicia"
-last = "Torres"
-real_name = first.downcase + " " + last.downcase
+original_name = "Felicia Torres".downcase
 new_name = ""
 name_array = []
 
 def first_last_swap(old,new)
 	new = old.split(" ").reverse!.join(" ")
 end
-new_name = first_last_swap(real_name,new_name)
+new_name = first_last_swap(original_name,new_name)
 
 #Split the name into all characters. Loop for all letters, if it is a vowel, find the index and increase by one. 
 
@@ -41,7 +39,22 @@ new_array = []
 name_array.each do |x|
 	new_array.push(letter_change(x))
 end
-p new_array
 
 new_name = new_array.join("").split(" ").map! {|word| word.capitalize}.join(" ")
-p new_name
+
+# USER INTERFACE
+
+puts "Hello, type in a name!"
+original_name = gets.chomp.downcase
+
+new_name = first_last_swap(original_name,new_name)
+name_array = letter_array(new_name)
+
+new_array = []
+name_array.each do |x|
+	new_array.push(letter_change(x))
+end
+
+new_name = new_array.join("").split(" ").map! {|word| word.capitalize}.join(" ")
+
+puts "The new name is #{new_name}."
