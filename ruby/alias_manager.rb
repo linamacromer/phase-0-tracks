@@ -25,14 +25,13 @@ end
 def letter_change(letter)
 	vowels = ["a", "e", "i", "o", "u", "a"]
 	consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z","b"]
-	new_array = []
 
 	if vowels.include? letter
-		new_array.push(vowels[vowels.index(letter)+1])
+		vowels[vowels.index(letter)+1]
 		elsif consonants.include? letter
-			new_array.push(consonants[consonants.index(letter)+1])
+			consonants[consonants.index(letter)+1]
 		elsif letter == " "
-			new_array.push(" ")
+			" "
 		else
 	end
 end
@@ -44,12 +43,5 @@ name_array.each do |x|
 end
 p new_array
 
-#name_array = letter_array(new_name)
-
-#name_array.each do |x|
-#	p vowel_change(x)
-#end
-
-#p name_array
-#letter_array(new_name).each do |variable|
-#end
+new_name = new_array.join("").split(" ").map! {|word| word.capitalize}.join(" ")
+p new_name
