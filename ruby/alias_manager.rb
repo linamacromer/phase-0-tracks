@@ -43,7 +43,7 @@ end
 new_name = new_array.join("").split(" ").map! {|word| word.capitalize}.join(" ")
 
 # USER INTERFACE
-
+all_names = {}
 puts "Hello, type in a name!"
 original_name = gets.chomp.downcase
 	until original_name == "quit"
@@ -56,7 +56,16 @@ original_name = gets.chomp.downcase
 		end
 
 		new_name = new_array.join("").split(" ").map! {|word| word.capitalize}.join(" ")
+		original_name = original_name.split(" ").map! {|word| word.capitalize}.join(" ")
+		all_names[original_name] = new_name
 
 		puts "\nThe new name is #{new_name}. \n\nWould you like to translate another name? \nPlease type the next name, or type 'quit' if you are finished."
 		original_name = gets.chomp.downcase
+	end
+
+#Add code above to push key-value pairs into empty hash after each iteration, print the iteration upon quitting the program.
+puts "\nThank you for your input. To review:"
+
+all_names.each do |original, new|
+	puts "#{original} became #{new}"
 	end
