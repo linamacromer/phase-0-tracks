@@ -5,7 +5,7 @@
 
 first = "Felicia"
 last = "Torres"
-real_name = first + " " + last
+real_name = first.downcase + " " + last.downcase
 new_name = ""
 name_array = []
 
@@ -22,19 +22,28 @@ end
 
 # Figure out what index it matches in the vowels, increase that by one, and replace it in the array with that. Do that for each item in the array.
 
-def vowel_change(letter)
+def letter_change(letter)
 	vowels = ["a", "e", "i", "o", "u", "a"]
 	consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z","b"]
+	new_array = []
 
 	if vowels.include? letter
-		p letter = vowels[vowels.index(letter)+1]
+		new_array.push(vowels[vowels.index(letter)+1])
 		elsif consonants.include? letter
-			p letter = consonants[consonants.index(letter)+1]
+			new_array.push(consonants[consonants.index(letter)+1])
+		elsif letter == " "
+			new_array.push(" ")
 		else
 	end
 end
 
-p vowel_change(name_array.each)
+name_array = letter_array(new_name)
+new_array = []
+name_array.each do |x|
+	new_array.push(letter_change(x))
+end
+p new_array
+
 #name_array = letter_array(new_name)
 
 #name_array.each do |x|
