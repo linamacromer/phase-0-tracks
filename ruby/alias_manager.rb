@@ -23,21 +23,24 @@ end
 # Figure out what index it matches in the vowels, increase that by one, and replace it in the array with that. Do that for each item in the array.
 
 def vowel_change(letter)
-	vowels = ["a", "e", "i", "o", "u"]
+	vowels = ["a", "e", "i", "o", "u", "a"]
+	consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z","b"]
 
 	if vowels.include? letter
-		p key = vowels.index(letter)
-		p letter = vowels[key+1]
+		p letter = vowels[vowels.index(letter)+1]
+		elsif consonants.include? letter
+			p letter = consonants[consonants.index(letter)+1]
 		else
 	end
 end
 
-name_array = letter_array(new_name)
+p vowel_change(name_array.each)
+#name_array = letter_array(new_name)
 
-name_array.each do |x|
-	p vowel_change(x)
-end
+#name_array.each do |x|
+#	p vowel_change(x)
+#end
 
-p name_array
+#p name_array
 #letter_array(new_name).each do |variable|
 #end
