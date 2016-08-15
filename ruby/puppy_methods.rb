@@ -87,7 +87,10 @@ until amount_of_kitties == 50
 	amount_of_kitties += 1
 end
 
-p all_kitties
+all_kitties.each do |kitty|
+	kitty.sleep(2)
+	kitty.kitty_scratches
+end
 
 
 
