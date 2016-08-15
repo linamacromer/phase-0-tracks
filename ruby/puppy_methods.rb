@@ -91,15 +91,3 @@ all_kitties.each do |kitty|
 	kitty.sleep(2)
 	kitty.kitty_scratches
 end
-
-
-
-
-
-
-
-
-
-
-
-
