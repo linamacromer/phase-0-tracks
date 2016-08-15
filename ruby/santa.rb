@@ -1,5 +1,8 @@
 class Santa
 
+	attr_reader :age :ethnicity
+	attr_accessor :gender
+
 	def initialize(gender,ethnicity)
 		puts "Initializing Santa instance..."
 		@gender = gender
@@ -25,18 +28,6 @@ class Santa
 		@reindeer_ranking
 	end
 
-	def gender=(new_gender)
-		@gender = new_gender
-	end
-
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
-
 end
 
 # Nick = Santa.new
@@ -53,6 +44,8 @@ example_genders.length.times do |i|
 end
 
 santas.each do |santa|
+	puts santa.age
+	santa.celebrate_birthday
 	puts santa.age
 	puts santa.ethnicity
 end
