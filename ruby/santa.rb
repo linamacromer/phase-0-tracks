@@ -11,5 +11,11 @@ class Santa
 	def initialize
 		puts "Initializing Santa instance..."
 	end
-	
+
 end
+
+Nick = Santa.new
+cookie_type = "snickerdoodle"
+
+Nick.speak
+Nick.eat_milk_and_cookies(cookie_type)
