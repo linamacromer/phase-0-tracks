@@ -5,11 +5,21 @@ class Puppy
     toy
   end
 
+  def speak(times)
+  	counter = 0
+  	while counter < times
+  	puts "Woof!"
+  	counter += 1
+  	end
+  end
+
 end
 
 # User Interface
 
 Artie = Puppy.new
 toy = "ball"
+times = 4
 
 Artie.fetch(toy)
+Artie.speak(times)
