@@ -13,6 +13,10 @@ class Puppy
   	end
   end
 
+  def roll_over
+  	puts "*rolls over*"
+  end
+
 end
 
 # User Interface
@@ -23,3 +27,4 @@ times = 4
 
 Artie.fetch(toy)
 Artie.speak(times)
+Artie.roll_over
