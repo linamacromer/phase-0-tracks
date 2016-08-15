@@ -17,6 +17,14 @@ class Puppy
   	puts "*rolls over*"
   end
 
+  def dog_years(human_years)
+  	human_years * 7
+  end
+
+  def eat(food_array)
+  	food_array.clear
+  end
+
 end
 
 # User Interface
@@ -24,7 +32,14 @@ end
 Artie = Puppy.new
 toy = "ball"
 times = 4
+human_years = 4
+food_array = ["avocados", "bananas", "dog treats"]
 
 Artie.fetch(toy)
 Artie.speak(times)
 Artie.roll_over
+p Artie.dog_years(human_years)
+
+p food_array
+Artie.eat(food_array)
+p food_array
