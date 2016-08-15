@@ -1,5 +1,9 @@
 class Puppy
 
+	def initialize
+		puts "initializing new puppy instance..."
+	end
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
