@@ -23,9 +23,36 @@ class Dragon
 		@can_breathe_fire = can_breathe_fire
 	end
 
+	def roar(roar_times)
+		roar_times.times do
+			puts "Roarrrr"
+		end
+	end
+
+	def breathe_fire
+		if @can_breathe_fire == true
+			puts "WHOOOOOOMPH! *sizzle*"
+		else
+			puts "Error: this dragon cannot breathe fire."
+		end
+	end
+
+	def eat(food_array)
+		food_array.clear
+		puts "#{@name} ate everything..."
+	end
+
 end
 
 #USER INTERFACE
 
-mirianth = Dragon.new("Mirianth","ruby red",120,850,2,true)
+mirianth = Dragon.new("Mirianth","ruby red",120,850,2,false)
 p mirianth
+
+food_array = ["sheep", "cows", "pigs", "humans...?!"]
+
+mirianth.roar(4)
+mirianth.breathe_fire
+p food_array
+mirianth.eat(food_array)
+p food_array
