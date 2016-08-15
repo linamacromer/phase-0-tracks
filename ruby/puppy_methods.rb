@@ -7,3 +7,9 @@ class Puppy
 
 end
 
+# User Interface
+
+Artie = Puppy.new
+toy = "ball"
+
+Artie.fetch(toy)
