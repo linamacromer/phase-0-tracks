@@ -73,8 +73,30 @@ end
 # Artie.eat(food_array)
 # p food_array
 
-Stormy = Kitty.new
-sleep_hours = 7
+# Stormy = Kitty.new
+# sleep_hours = 7
 
-Stormy.sleep(sleep_hours)
-Stormy.kitty_scratches
+# Stormy.sleep(sleep_hours)
+# Stormy.kitty_scratches
+
+amount_of_kitties = 0
+all_kitties = []
+
+until amount_of_kitties == 50
+	all_kitties << Kitty.new
+	amount_of_kitties += 1
+end
+
+p all_kitties
+
+
+
+
+
+
+
+
+
+
+
+
