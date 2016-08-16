@@ -3,8 +3,16 @@
 #at least three methods, at least one of which takes an argument
 
 #Dragon
-#attributes: color (str), height, weight, age (int), can_breathe_fire (bool)
-#method: roar several times (times parameter), breathes fire (must be can_breathe_fire true), eat (takes a full array of food items and eats them all to output empty array) 
+#attributes/state: 
+	#color (str) 
+	#height (str)
+	#weight (str)
+	#age (int)
+	#can_breathe_fire (bool)
+#method/behavior: 
+	#roar several times (times parameter)
+	#breathes fire (must be can_breathe_fire true)
+	#eat (takes a full array of food items and eats them all to output empty array) 
 
 #BUSINESS LOGIC
 
