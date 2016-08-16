@@ -20,7 +20,8 @@ class Dragon
 		@height_ft = height_ft
 		@weight_lb = weight_lb
 		@age = age
-		@can_breathe_fire = can_breathe_fire
+		@can_breathe_fire = 
+		puts "--------------------"
 	end
 
 	def roar(roar_times)
@@ -51,31 +52,46 @@ end
 	#Print all results
 
 puts "Hello, and welcome to the dragon creator!"
-print "What is the name of the dragon? "
-name = gets.chomp
 
-print "What color is the dragon? "
-color = gets.chomp
+def questionnaire(dragons_array)
+	print "What is the name of the dragon? "
+	name = gets.chomp
 
-print "How tall is the dragon (in feet)? "
-height_ft = gets.to_i
+	print "What color is the dragon? "
+	color = gets.chomp
 
-print "How much does the dragon weigh (in pounds)? "
-weight_lb = gets.to_i
+	print "How tall is the dragon (in feet)? "
+	height_ft = gets.to_i
 
-print "How old is the dragon? "
-age = gets.to_i
+	print "How much does the dragon weigh (in pounds)? "
+	weight_lb = gets.to_i
 
-print "Can this dragon breathe fire? (Yes/No) "
-can_breathe_fire = gets.chomp.downcase 
-can_breathe_fire = can_breathe_fire == "yes"
+	print "How old is the dragon? "
+	age = gets.to_i
 
-p name
-p color
-p height_ft
-p weight_lb
-p age 
-p can_breathe_fire
+	print "Can this dragon breathe fire? (Yes/No) "
+	can_breathe_fire = gets.chomp.downcase 
+	can_breathe_fire = can_breathe_fire == "yes"
+
+	dragons_array << Dragon.new(name,color,height_ft,weight_lb,age,can_breathe_fire)
+
+end
+
+dragons = []
+questionnaire(dragons)
+
+print "Do you have another dragon to add? (Yes/No) "
+add_another_dragon = gets.chomp.downcase
+add_another_dragon = add_another_dragon == "yes"
+
+while add_another_dragon == true
+	questionnaire(dragons)
+	print "Do you have another dragon to add? (Yes/No) "
+	add_another_dragon = gets.chomp.downcase
+	add_another_dragon = add_another_dragon == "yes"
+end
+
+
 
 
 #TEST CODE
