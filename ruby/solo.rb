@@ -45,14 +45,48 @@ class Dragon
 end
 
 #USER INTERFACE
+	#Welcome the user
+	#Ask questions and get input, add to array
+	#Ask if there is another dragon to add. If yes, repeat. If no, next step.
+	#Print all results
 
-mirianth = Dragon.new("Mirianth","ruby red",120,850,2,false)
-p mirianth
+puts "Hello, and welcome to the dragon creator!"
+print "What is the name of the dragon? "
+name = gets.chomp
 
-food_array = ["sheep", "cows", "pigs", "humans...?!"]
+print "What color is the dragon? "
+color = gets.chomp
 
-mirianth.roar(4)
-mirianth.breathe_fire
-p food_array
-mirianth.eat(food_array)
-p food_array
+print "How tall is the dragon (in feet)? "
+height_ft = gets.to_i
+
+print "How much does the dragon weigh (in pounds)? "
+weight_lb = gets.to_i
+
+print "How old is the dragon? "
+age = gets.to_i
+
+print "Can this dragon breathe fire? (Yes/No) "
+can_breathe_fire = gets.chomp.downcase 
+can_breathe_fire = can_breathe_fire == "yes"
+
+p name
+p color
+p height_ft
+p weight_lb
+p age 
+p can_breathe_fire
+
+
+#TEST CODE
+	# mirianth = Dragon.new("Mirianth","ruby red",120,850,2,false)
+	# p mirianth
+
+	# food_array = ["sheep", "cows", "pigs", "humans...?!"]
+
+	# mirianth.roar(4)
+	# mirianth.breathe_fire
+	# p food_array
+	# mirianth.eat(food_array)
+	# p food_array
+
