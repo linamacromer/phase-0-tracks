@@ -20,7 +20,7 @@ class Dragon
 		@height_ft = height_ft
 		@weight_lb = weight_lb
 		@age = age
-		@can_breathe_fire = 
+		@can_breathe_fire = can_breathe_fire
 		puts "--------------------"
 	end
 
@@ -74,7 +74,6 @@ def questionnaire(dragons_array)
 	can_breathe_fire = can_breathe_fire == "yes"
 
 	dragons_array << Dragon.new(name,color,height_ft,weight_lb,age,can_breathe_fire)
-
 end
 
 dragons = []
