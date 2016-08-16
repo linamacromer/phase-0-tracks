@@ -91,8 +91,15 @@ while add_another_dragon == true
 	add_another_dragon = add_another_dragon == "yes"
 end
 
-
-
+puts "---------------------\nOkay great, let's review:"
+dragons.each do |dragon|
+	p dragon.can_breathe_fire
+	if dragon.can_breathe_fire == true
+	puts "The dragon's name was #{dragon.name}, was #{dragon.color} colored, #{dragon.height_ft} feet tall, #{dragon.weight_lb} pounds, #{dragon.age} years old, and could breathe fire."
+	else
+	puts "The dragon's name was #{dragon.name}, was #{dragon.color} colored, #{dragon.height_ft} feet tall, #{dragon.weight_lb} pounds, #{dragon.age} years old, and could not breathe fire."
+	end
+end
 
 #TEST CODE
 	# mirianth = Dragon.new("Mirianth","ruby red",120,850,2,false)
