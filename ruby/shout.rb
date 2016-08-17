@@ -1,10 +1,10 @@
 module Shout
 
-	def self.yell_angrily(words)
+	def yell_angrily(words)
 		words + "!!!" + ":-("
 	end
 
-	def self.yell_happily(words)
+	def yell_happily(words)
 		words + "!!!" + ":-D"
 	end
 
@@ -25,9 +25,17 @@ class Cheerleader
 end
 
 class Coach
-	def initalize
+	def initialize
 		puts "Alright team, listen up!"
 	end
 
 	include Shout
 end
+
+abby = Cheerleader.new
+puts abby.yell_happily("Go team")
+puts abby.yell_angrily("Defense")
+
+brian = Coach.new
+puts brian.yell_happily("Go out there and work together")
+puts brian.yell_angrily("That doesn't look like teamwork")
