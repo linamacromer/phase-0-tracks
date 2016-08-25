@@ -7,10 +7,11 @@ function reverse(str) {
 	for (var i = str.length -1; i > -1; i+= -1) {
 		reversed = reversed + str[i];
 	}
-	console.log(reversed)
+	return reversed
 }
 
-var reversed_str = reverse("hello");
-console.log(reversed_str)
+// Driver code:
 
-reverse("abcdefg")
+var str1 = reverse("hello");
+var str2 = reverse("abcdefg")
+
