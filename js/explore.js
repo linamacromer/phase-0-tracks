@@ -15,3 +15,12 @@ function reverse(str) {
 var str1 = reverse("hello");
 var str2 = reverse("abcdefg")
 
+var test = 2
+
+if (test == 1) {
+	console.log("hello reversed is "+str1);
+} else if (test == 2) {
+	console.log("abcdefg reversed is "+str2);
+} else {
+	console.log("error")
+}
