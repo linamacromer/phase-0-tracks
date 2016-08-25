@@ -4,7 +4,13 @@
 
 var str = "hello";
 var length = str.length - 1;
+var reversed = "";
 
-for (var i = length; i > -1; i+= -1) {
-	console.log(str[i])
+function reverse(str) {
+	for (var i = length; i > -1; i+= -1) {
+		reversed = reversed + str[i];
+	}
+	console.log(reversed)
 }
+
+reverse(str)
