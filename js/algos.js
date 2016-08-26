@@ -15,8 +15,26 @@ function longest_phrase(phrase_array) {
 	return longest_phrase;
 }
 
-var phrase_array = ["long phrase","longest phrase","longer phrase"];
-console.log(longest_phrase(phrase_array))
+//Write a function that takes two objects and checks to see if the objects share at least one key-value pair. Return true or false
 
-var phrase_array2 = ["short", "longish", "superduperlong"];
-console.log(longest_phrase(phrase_array2))
+function has_match(first_object, second_object) {
+	for (key in first_object) {
+		if (first_object["key"] === second_object["key"]) {
+			return true; break;
+		} else {
+			return false;
+		}
+	}
+}
+
+
+//DRIVER CODE:
+// var phrase_array = ["long phrase","longest phrase","longer phrase"];
+// console.log(longest_phrase(phrase_array))
+
+// var phrase_array2 = ["1", "12", "123"];
+// console.log(longest_phrase(phrase_array2))
+
+var person1 = {name: "Steven", age: 4};
+var person2 = {name: "Tamir", age: 54};
+console.log(has_match(person1, person2))
