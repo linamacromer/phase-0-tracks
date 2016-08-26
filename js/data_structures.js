@@ -31,6 +31,15 @@ function Car(make,model,color,year) {
 	console.log("Car complete!");
 }
 
+// Adding literal construction for assignment rubric item
+var car3 = {
+	make: "Honda",
+	model: "Fit",
+	color: "Silver",
+	year: 2009
+}
+console.log(car3);
+
 var car1 = new Car("Subaru", "Legacy", "Red", 2013);
 console.log(car1);
 car1.honk();
