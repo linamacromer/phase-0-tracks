@@ -54,4 +54,11 @@ function random_data(how_many_times) {
 // var person2 = {name: "Tamir", age: 54};
 // console.log(has_match(person1, person2));
 
-console.log(random_data(3))
+//console.log(random_data(10))
+
+for (var i = 0; i < 10; i++) {
+	this_array = random_data(3);
+	console.log(this_array);
+	console.log("The longest phrase of this array is " + longest_phrase(this_array));
+	console.log("-----------");
+}
