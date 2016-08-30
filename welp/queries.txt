@@ -10,3 +10,13 @@ Bradford|Pitt|JoeBob's Sportz Barn|1|They didn't have basketballs!
 Holly|Berry|Amir's Towing|3|They showed up 4 hrs late!
 Holly|Berry|Lotus Yoga|4|I felt so relaxed
 
+sqlite> SELECT
+   ...> users.first_name,users.last_name,businesses.name,reviews.stars,reviews.comment
+   ...> FROM reviews
+   ...> INNER JOIN businesses
+   ...> ON reviews.business_id = businesses.id
+   ...> AND businesses.name = "Sushi World"
+   ...> INNER JOIN users
+   ...> ON reviews.user_id = users.id;
+Angela|Jolie|Sushi World|5|This was yummy!
+Holly|Berry|Sushi World|4|WOW!
