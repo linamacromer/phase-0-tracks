@@ -1,0 +1,53 @@
+sqlite> SELECT * FROM students;
+1|Lina|4|1
+2|Vincent|1|4
+3|Zoe|4|1
+4|Diana|1|4
+5|Winny|5|2
+6|Jennifer|5|2
+7|Adrian|3|3
+8|AJ|3|3
+9|Andrew|2|5
+
+sqlite> SELECT * FROM teachers;
+1|Ms. Roberts|true
+2|Mr. Englert|true
+3|Mr. Stamps|false
+4|Mr. Jordan|false
+5|Mrs. Vachal|true
+
+sqlite> UPDATE teachers SET has_tenure="true" WHERE name="Mr. Jordan";
+
+sqlite> SELECT * FROM students, teachers WHERE students.teacher_id=teachers.id;
+1|Lina|4|1|1|Ms. Roberts|true
+2|Vincent|1|4|4|Mr. Jordan|true
+3|Zoe|4|1|1|Ms. Roberts|true
+4|Diana|1|4|4|Mr. Jordan|true
+5|Winny|5|2|2|Mr. Englert|true
+6|Jennifer|5|2|2|Mr. Englert|true
+7|Adrian|3|3|3|Mr. Stamps|false
+8|AJ|3|3|3|Mr. Stamps|false
+9|Andrew|2|5|5|Mrs. Vachal|true
+
+sqlite> SELECT students.name, teachers.name FROM students JOIN teachers ON students.teacher_id = teachers.id;
+Lina|Ms. Roberts
+Vincent|Mr. Jordan
+Zoe|Ms. Roberts
+Diana|Mr. Jordan
+Winny|Mr. Englert
+Jennifer|Mr. Englert
+Adrian|Mr. Stamps
+AJ|Mr. Stamps
+Andrew|Mrs. Vachal
+
+sqlite> DELETE FROM students WHERE name="AJ";
+
+sqlite> SELECT students.name, teachers.name FROM students INNER JOIN teachers ON students.teacher_id = teachers.id;
+Lina|Ms. Roberts
+Vincent|Mr. Jordan
+Zoe|Ms. Roberts
+Diana|Mr. Jordan
+Winny|Mr. Englert
+Jennifer|Mr. Englert
+Adrian|Mr. Stamps
+Andrew|Mrs. Vachal
