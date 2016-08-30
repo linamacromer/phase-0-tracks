@@ -1,0 +1,12 @@
+sqlite> SELECT*FROM businesses,users,reviews WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
+2|Sushi World|3|Angela|Jolie|1|5|This was yummy!|2|3
+6|JoeBob's Sportz Barn|1|Bradford|Pitt|2|1|They didn't have basketballs!|6|1
+3|Amir's Towing|5|Holly|Berry|3|3|They showed up 4 hrs late!|3|5
+5|Lotus Yoga|5|Holly|Berry|4|4|I felt so relaxed|5|5
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM businesses,users,reviews WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
+Angela|Jolie|Sushi World|5|This was yummy!
+Bradford|Pitt|JoeBob's Sportz Barn|1|They didn't have basketballs!
+Holly|Berry|Amir's Towing|3|They showed up 4 hrs late!
+Holly|Berry|Lotus Yoga|4|I felt so relaxed
+
