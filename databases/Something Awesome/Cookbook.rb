@@ -17,3 +17,8 @@ create_table_cmd = <<-SQL
 SQL
 
 cookbook.execute(create_table_cmd)
+
+def add_recipe(db, name, link)
+  db.execute("INSERT INTO recipes (name, link) VALUES (?, ?)", [name, link])
+end
+
