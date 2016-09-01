@@ -7,6 +7,8 @@
 require 'sqlite3'
 
 cookbook = SQLite3::Database.new("cookbook.db")
+random_lunch = nil
+random_dinner = nil
 
 create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS recipes(
@@ -22,8 +24,9 @@ def add_recipe(db, name, lunch, dinner)
 end
 
 def list_recipes(db)
-  recipes = db.execute("SELECT * FROM recipes")
-  recipes.each do |recipe|
+	puts "\n\n***RECIPES***"
+  	recipes = db.execute("SELECT * FROM recipes")
+  	recipes.each do |recipe|
   	puts "#{recipe[0]}. #{recipe[1]}"
 	end
 end
@@ -34,7 +37,7 @@ def randomize_lunch(db)
 	until recipes[random_number][2] == "true"
 		random_number = rand(db.execute("SELECT * FROM recipes").length)
 	end
-		puts "Lunch for this week will be #{recipes[random_number][1]}"
+		random_lunch = recipes[random_number][1]
 end
 
 def randomize_dinner(db)
@@ -43,12 +46,17 @@ def randomize_dinner(db)
 	until recipes[random_number][3] == "true"
 		random_number = rand(db.execute("SELECT * FROM recipes").length)
 	end
-		puts "Dinner for this week will be #{recipes[random_number][1]}"
+		random_dinner = recipes[random_number][1]
 end
 
-def randomize_meals(db)
-	randomize_lunch(db)
-	randomize_dinner(db)
+def randomize_meals(db)	
+	random_lunch = randomize_lunch(db)
+	random_dinner = randomize_dinner(db)
+	until random_lunch != random_dinner
+		random_lunch = randomize_lunch(db)
+		random_dinner = randomize_dinner(db)
+	end
+	puts "Lunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
 end
 
 def main_menu()
@@ -73,11 +81,12 @@ cookbook.execute(create_table_cmd)
 # puts "- - - - - -"
 # randomize_meals(cookbook)
 
-puts "Hello and welcome to the meal generator program!\n"
+puts "Hello and welcome to the meal generator program!\n\n"
 user_input = main_menu()
 
 until user_input == 4
 	if user_input == 1
+		puts "\n\n"
 		randomize_meals(cookbook)
 	elsif user_input == 2
 		list_recipes(cookbook)
@@ -89,10 +98,11 @@ until user_input == 4
 		puts "Can this recipe be used for dinner? Type true or false."
 		dinner = gets.chomp
 		add_recipe(cookbook,name,lunch,dinner)
+		puts "\n\n#{name} has been added to the recipe list!"
 	end
-	puts "-----"
+	puts "\n\n-----"
 	user_input = main_menu()
 end
 
-puts "Thanks and goodbye!"
+puts "\n\nThanks and goodbye!"
 
