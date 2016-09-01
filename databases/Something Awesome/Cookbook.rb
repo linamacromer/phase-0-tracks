@@ -97,6 +97,7 @@ end
 ## DRIVER CODE **
 #add_recipe(cookbook, "Tacos", "false", "true")
 #add_recipe(cookbook, "Pot roast", "true", "true")
+#For copy/pasting later if table needs to be refilled: INSERT INTO recipes (name, lunch, dinner) VALUES ("Tacos","false","true"),("Pot Roast","true","true"),("Beet sandwiches","false","true"),("Roast beef sandwiches","false","true"),("Curry","true","true"),("Chinese lunch","true","true"),("Sausages and broccoli","true","true"),("Lentil soup","false","true"),("Shepherd’s pie","true","true"),("Stuffed peppers","true","true"),("Salmon and broccoli","false","true"),("Chicken salad","true","true"),("Steak salad","false","true")
 
 cookbook.execute(create_table_cmd)
 #list_recipes(cookbook)
