@@ -57,8 +57,8 @@ def randomize_meals(db)
 		random_dinner = randomize_dinner(db)
 	end
 	puts "Lunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
-	puts "----------------\nAre you satisfied with this result?\nType yes to return to the main menu. Type lunch or dinner to reroll a specific meal. Type redo to randomize both meals."
-	reroll = gets.chomp
+	puts "----------------\nAre you satisfied with this result?\nType YES to return to the main menu. Type LUNCH or DINNER to reroll a specific meal. Type REDO to randomize both meals."
+	reroll = gets.chomp.downcase
 	until reroll == "yes"
 		if reroll == "redo"
 			random_lunch = randomize_lunch(db)
@@ -67,25 +67,25 @@ def randomize_meals(db)
 				random_lunch = randomize_lunch(db)
 				random_dinner = randomize_dinner(db)
 			end
-			puts "Lunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
+			puts "\n\nLunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
 		elsif reroll == "lunch"
 			random_lunch = randomize_lunch(db)
 			until random_lunch != random_dinner
 				random_lunch = randomize_lunch(db)
 			end
-			puts "Lunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
+			puts "\n\nLunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
 		elsif reroll == "dinner"
 			random_dinner = randomize_dinner(db)
 			until random_lunch != random_dinner
 				random_dinner = randomize_dinner(db)
 			end
-			puts "Lunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
+			puts "\n\nLunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
 		elsif reroll == "yes"
 		else 
-			puts "I didn't understand that input."
+			puts "\n\nI didn't understand that input.\nLunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
 		end
-		puts "----------------\nAre you satisfied with this result?\nType yes to return to the main menu. Type lunch or dinner to reroll a specific meal. Type redo to randomize both meals."
-		reroll = gets.chomp
+		puts "----------------\nAre you satisfied with this result?\nType YES to return to the main menu. Type LUNCH or DINNER to reroll a specific meal. Type REDO to randomize both meals."
+		reroll = gets.chomp.downcase
 	end
 end
 
@@ -107,7 +107,7 @@ cookbook.execute(create_table_cmd)
 # puts "- - - - - -"
 # randomize_meals(cookbook)
 
-puts "Hello and welcome to the meal generator program!\n\n"
+puts "\nHello and welcome to the meal generator program!\n\n"
 user_input = main_menu()
 
 until user_input == 4
