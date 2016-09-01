@@ -57,14 +57,40 @@ def randomize_meals(db)
 		random_dinner = randomize_dinner(db)
 	end
 	puts "Lunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
+	puts "----------------\nAre you satisfied with this result?\nType yes to return to the main menu. Type lunch or dinner to reroll a specific meal. Type redo to randomize both meals."
+	reroll = gets.chomp
+	until reroll == "yes"
+		if reroll == "redo"
+			random_lunch = randomize_lunch(db)
+			random_dinner = randomize_dinner(db)
+			until random_lunch != random_dinner
+				random_lunch = randomize_lunch(db)
+				random_dinner = randomize_dinner(db)
+			end
+			puts "Lunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
+		elsif reroll == "lunch"
+			random_lunch = randomize_lunch(db)
+			until random_lunch != random_dinner
+				random_lunch = randomize_lunch(db)
+			end
+			puts "Lunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
+		elsif reroll == "dinner"
+			random_dinner = randomize_dinner(db)
+			until random_lunch != random_dinner
+				random_dinner = randomize_dinner(db)
+			end
+			puts "Lunch this week will be #{random_lunch}.\nDinner this week will be #{random_dinner}."
+		elsif reroll == "yes"
+		else 
+			puts "I didn't understand that input."
+		end
+		puts "----------------\nAre you satisfied with this result?\nType yes to return to the main menu. Type lunch or dinner to reroll a specific meal. Type redo to randomize both meals."
+		reroll = gets.chomp
+	end
 end
 
 def main_menu()
-	puts "What would you like to do? Type the number"
-	puts "1. Randomize meals"
-	puts "2. View recipe list"
-	puts "3. Add a recipe"
-	puts "4. Exit"
+	puts "What would you like to do? Type the number\n1. Randomize meals\n2. View recipe list\n3. Add a recipe\n4. Exit"
 	user_input = gets.chomp.to_i
 end
 
