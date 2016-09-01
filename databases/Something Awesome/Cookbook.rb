@@ -58,21 +58,6 @@ def main_menu()
 	puts "3. Add a recipe"
 	puts "4. Exit"
 	user_input = gets.chomp.to_i
-	if user_input == 1
-		randomize_meals(cookbook)
-	elsif user_input == 2
-		list_recipes(cookbook)
-	elsif user_input == 3
-		puts "What is the recipe name?"
-		name = gets.chomp
-		puts "Can this recipe be used for lunch? Type true or false."
-		lunch = gets.chomp
-		puts "Can this recipe be used for dinner? Type true or false."
-		dinner = gets.chomp
-		add_recipe(cookbook,name,lunch,dinner)
-	elsif user_input ==4
-		puts "Thanks and goodbye!"
-	end
 end
 
 ## DRIVER CODE **
@@ -89,6 +74,25 @@ cookbook.execute(create_table_cmd)
 # randomize_meals(cookbook)
 
 puts "Hello and welcome to the meal generator program!\n"
-main_menu()
+user_input = main_menu()
 
+until user_input == 4
+	if user_input == 1
+		randomize_meals(cookbook)
+	elsif user_input == 2
+		list_recipes(cookbook)
+	elsif user_input == 3
+		puts "What is the recipe name?"
+		name = gets.chomp
+		puts "Can this recipe be used for lunch? Type true or false."
+		lunch = gets.chomp
+		puts "Can this recipe be used for dinner? Type true or false."
+		dinner = gets.chomp
+		add_recipe(cookbook,name,lunch,dinner)
+	end
+	puts "-----"
+	user_input = main_menu()
+end
+
+puts "Thanks and goodbye!"
 
