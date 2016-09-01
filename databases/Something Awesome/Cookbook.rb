@@ -18,7 +18,7 @@ create_table_cmd = <<-SQL
   )
 SQL
 
-cookbook.execute(create_table_cmd)
+#cookbook.execute(create_table_cmd)
 
 def add_recipe(db, name, lunch, dinner)
   db.execute("INSERT INTO recipes (name, lunch, dinner) VALUES (?, ?, ?)", [name, lunch, dinner])
@@ -31,8 +31,35 @@ def list_recipes(db)
 	end
 end
 
+def randomize_lunch(db)
+	random_number = rand(db.execute("SELECT * FROM recipes").length)
+	recipes = db.execute("SELECT * FROM recipes")
+	until recipes[random_number][3] == "true"
+		random_number = rand(db.execute("SELECT * FROM recipes").length)
+	end
+		puts "Lunch for this week will be #{recipes[random_number][1]}"
+end
+
+def randomize_dinner(db)
+	random_number = rand(db.execute("SELECT * FROM recipes").length)
+	recipes = db.execute("SELECT * FROM recipes")
+	until recipes[random_number][4] == "true"
+		random_number = rand(db.execute("SELECT * FROM recipes").length)
+	end
+		puts "Lunch for this week will be #{recipes[random_number][1]}"
+end
+
 ## DRIVER CODE **
-add_recipe(cookbook, "Tacos", "false", "true")
-add_recipe(cookbook, "Pot roast", "true", "true")
+#add_recipe(cookbook, "Tacos", "false", "true")
+#add_recipe(cookbook, "Pot roast", "true", "true")
 
 list_recipes(cookbook)
+
+puts "-------"
+randomize_lunch(cookbook)
+randomize_dinner(cookbook)
+
+
+
+
+
