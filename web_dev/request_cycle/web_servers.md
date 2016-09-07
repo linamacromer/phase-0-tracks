@@ -1,0 +1,10 @@
+What are some of the key design philosophies of the Linux operating system?
+In my research, the key design philosophy of Linux that separates it from other operating systems is that it gives the user the power to do anything. Instead of shielding users behind inflexible Graphical User Interfaces that assume users are computer illiterate, Linux gives the user the ability to do anything, and assumes that users are competent. One of the ways that this philosophy is apparent is the ease with which a user can open and access the terminal and do whatever they want without restrictions.
+
+
+In your own words, what is a VPS (virtual private server)? What, according to your research, are the advantages of using a VPS?
+A VPS is a server that is hosted over the Internet, as opposed to a server that might be hosted in a physical location. There are Internet hosting services that will let you create a VPS for yourself, and the advantage is that you have all the functionality of a private server, without actually having to provide the space and the upkeep of a server. They're also much less expensive because of this. The VPS is partitioned so it has its own operating system and disc space, so it is separate from the website hosting it, but it's physically a part of the web service's servers.
+
+
+Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
+Even though Linux gives you the ability to run things as a root user, it's not a good idea to do so on a daily basis just in case something goes wrong. If you're working as the root user and an application gets compromised, that could be a headache to deal with. If you're working on the user level, you still have a lot of flexibility and control, but there is an extra layer of security for the administrative tasks of the root user.
