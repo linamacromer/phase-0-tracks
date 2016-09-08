@@ -1,4 +1,4 @@
-div {
+button {
 	height: 20px;
 	width: 30px;
 	background-color: blue;
@@ -23,4 +23,8 @@ h2 {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 15.4px;
+}
+
+.green {
+	background-color: green;
 }
